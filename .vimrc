@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 set nobackup "ファイル保存時にバックアップファイルを作らない
 set noswapfile "ファイル編集中にスワップファイルを作らない
 set hlsearch "検索文字列をハイライトする
@@ -22,7 +13,7 @@ set mouse=a " マウスの入力を受け付ける
 let mapleader = "\<Space>" " リーダーキーの設定
 set clipboard+=unnamed "クリップボードにコピー
 
-"-----------------------------------------------------------------------------
+"----------------------------------------------------------------------------
 " Remap key biding
 "-----------------------------------------------------------------------------
 " jj連打でescape
@@ -41,6 +32,7 @@ nmap <C-a> gg<S-v>G
 "inoremap <Down> <C-O>gj
 " inoremap <Tab> <C-t>
 " inoremap <S-Tab> <C-d>
+
 
 "-----------------------------------------------------------------------------
 " Emmet
@@ -79,7 +71,7 @@ if dein#load_state(s:dein_dir)
 
    "finalize
     call dein#end()
-    cll dein#save_state()
+    call dein#save_state()
 endif
 
 " plugin installation check {{{
@@ -110,9 +102,4 @@ if len(s:removed_plugins) > 0
   call dein#recache_runtimepath()
 endif
 " }}}
-a
-
-
-
-
 
