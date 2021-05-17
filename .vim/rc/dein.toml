@@ -1,0 +1,97 @@
+# ----------------------------------------------------------------------------
+# 必須系
+# ----------------------------------------------------------------------------
+
+[[plugins]] #プラグインマネージャー
+repo = 'Shougo/dein.vim' 
+
+[[plugins]] #コメントアウト
+repo = 'preservim/nerdcommenter'
+hook_add = """
+source ~/.config/nvim/plugins/nerdcommenter.vim
+"""
+
+[[plugins]] #HTML効率化
+repo = 'mattn/emmet-vim'
+
+[[plugins]] #ファイラ
+repo = 'Shougo/defx.nvim'
+depends = ['defx-git', 'defx-icons']
+hook_add = """
+source ~/.config/nvim/plugins/defx.rc.vim
+"""
+
+[[plugins]] #ファイラのアイコン
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]] #オートコンプリケーション
+repo = "neoclide/coc.nvim"
+merged = 0
+rev = "release"
+hook_add = """
+source ~/.config/nvim/plugins/coc.rc.vim
+"""
+
+[[plugins]] #スニペット
+repo = 'SirVer/ultisnips'
+
+[[plugins]] #スニペット
+repo = 'honza/vim-snippets'
+
+[[plugins]] #曖昧検索？
+repo = 'Shougo/denite.nvim'
+hook_add = """
+source ~/.config/nvim/plugins/denite.rc.vim
+"""
+
+# [[plugins]] #曖昧検索？
+# repo = 'junegunn/fzf.vim'
+
+# [[plugins]] #曖昧検索？
+# repo = 'junegunn/fzf'
+
+# 結局うまく行かなかったのでコメントアウト
+# [[plugins]] #react関連のスニペット・coc.nvim拡張
+# repo = "dsznajder/vscode-es7-javascript-react-snippets"
+# echo system でシェルコマンドを実行できる
+# yarnが必要
+# hook_add = """
+# echo system('yarn install --frozen-lockfile && yarn compile')
+# """
+
+# ----------------------------------------------------------------------------
+# 便利系
+# ----------------------------------------------------------------------------
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+
+# ----------------------------------------------------------------------------
+# カラースキーム 
+# ----------------------------------------------------------------------------
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+# ----------------------------------------------------------------------------
+# Takuya氏おすすめだが使いこなせていない
+# ----------------------------------------------------------------------------
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+#[[plugins]]
+#repo = 'Shougo/denite.nvim'
+#hook_add = """
+#source ~/.config/nvim/plugins/denite.rc.vim
+#"""
+
+# ----------------------------------------------------------------------------
+# 今後使うかも
+# ----------------------------------------------------------------------------
+# コメントアウト
+# [[plugins]]
+# repo = 'tyru/caw.vim'
+
+
