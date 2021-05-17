@@ -15,5 +15,5 @@ for f in .??*; do
     [ "$f" = ".gitmodules" ] && continue
 
     # シンボリックリンクを貼る
-    ln -snfv ${PWD}"$f" ~/
+    ln -snfv ${PWD}/"$f" ~/
 done
