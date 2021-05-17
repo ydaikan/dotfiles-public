@@ -1,5 +1,12 @@
-set number         " 行番号を表示する
-set confirm "保存されていないファイルがあるときは終了前に保存確認
+
+
+
+
+
+
+
+
+
 set nobackup "ファイル保存時にバックアップファイルを作らない
 set noswapfile "ファイル編集中にスワップファイルを作らない
 set hlsearch "検索文字列をハイライトする
@@ -12,7 +19,37 @@ set shiftwidth=2 "自動インデントでずれる幅
 set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set mouse=a " マウスの入力を受け付ける
 
+let mapleader = "\<Space>" " リーダーキーの設定
+set clipboard+=unnamed "クリップボードにコピー
 
+"-----------------------------------------------------------------------------
+" Remap key biding
+"-----------------------------------------------------------------------------
+" jj連打でescape
+inoremap <silent> jj <ESC>
+" Space押しながらwで保存して閉じる
+nnoremap <Leader>w :wq<CR>
+" Select all
+nmap <C-a> gg<S-v>G
+
+" noremap <Down> gj
+" noremap <Up> gk
+" nnoremap <S-Tab> <<
+
+" INSERT mode
+"inoremap <Up> <C-O>gk
+"inoremap <Down> <C-O>gj
+" inoremap <Tab> <C-t>
+" inoremap <S-Tab> <C-d>
+
+"-----------------------------------------------------------------------------
+" Emmet
+"-----------------------------------------------------------------------------
+let g:user_emmet_leader_key=','
+
+"-----------------------------------------------------------------------------
+" Dein
+"-----------------------------------------------------------------------------
 " dein.vim settings {{{
 " install dir {{{
 let s:dein_dir = expand('~/.cache/dein')
@@ -45,13 +82,20 @@ if dein#load_state(s:dein_dir)
     cll dein#save_state()
 endif
 
+" plugin installation check {{{
+if dein#check_install()
+  call dein#install()
+endif
+" }}}
+
+
 
 "------------------------------------------------------------------------------
 " Color scheme
 "------------------------------------------------------------------------------
 
 syntax on
-colorscheme jellybeans
+colorscheme molokai
 
 " plugin installation check {{{
 if dein#check_install()
@@ -67,3 +111,8 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 a
+
+
+
+
+
