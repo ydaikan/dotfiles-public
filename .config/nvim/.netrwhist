@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/Users/ydaikan/tina-tutorial/src'
+let g:netrw_dirhist_8='/Users/ydaikan/dotfiles-public/.config/nvim/plugins'
+let g:netrw_dirhist_7='/Users/ydaikan/tina-tutorial/src/components'
+let g:netrw_dirhist_6='/Users/ydaikan/tina-tutorial/src'
+let g:netrw_dirhist_5='/Users/ydaikan/My-Portfolio/src/components'
+let g:netrw_dirhist_4='/Users/ydaikan/My-Portfolio/src'
+let g:netrw_dirhist_3='/Users/ydaikan/tina-starter-grande/src/components'
+let g:netrw_dirhist_2='/Users/ydaikan/tina-starter-grande/src'
+let g:netrw_dirhist_1='/Users/ydaikan/My-Portfolio/src/components'
+let g:netrw_dirhist_0='/Users/ydaikan/My-Portfolio/src'

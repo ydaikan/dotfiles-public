@@ -18,82 +18,31 @@ let mapleader = "\<Space>" " リーダーキーの設定
 set clipboard+=unnamed "クリップボードにコピー
 
 "-------------------------------------------------------------------------------
-" Cursor line
-"-------------------------------------------------------------------------------
-
-set cursorline
-"set cursorcolumn
-
-" Set cursor line color on visual mode
-highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
-
-highlight LineNr       cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
-
-augroup BgHighlight
-  autocmd!
-  autocmd WinEnter * set cul
-  autocmd WinLeave * set nocul
-augroup END
-
-if &term =~ "screen"
-  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
-  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
-endif
-
-"-------------------------------------------------------------------------------
 " Dein
 "-------------------------------------------------------------------------------
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+let s:dein_dir = expand('~/.cache/dein')
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-" Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+  let g:rc_dir = expand('~/.vim/rc')
+  let s:toml = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-" Required:
-if dein#load_state('$HOME/.cache/dein')
-  call dein#begin('$HOME/.cache/dein')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
-
-  " Required:
   call dein#end()
   call dein#save_state()
 endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
-
-"End dein Scripts-------------------------
-"-------------------------------------------------------------------------------
-" DevIcons
-"-------------------------------------------------------------------------------
-
-set guifont=Sauce\ Code\ Pro\ Light\ Nerd\ Font\ Complete\ Windows\ Compatible:h11
-let g:webdevicons_enable_vimfiler = 1
 
 "-------------------------------------------------------------------------------
 " Color scheme
 "-------------------------------------------------------------------------------
 
 colorscheme molokai
-
 
 "----------------------------------------------------------------------------
 " スニペット
@@ -128,7 +77,6 @@ nmap <C-a> gg<S-v>G
 " inoremap <Tab> <C-t>
 " inoremap <S-Tab> <C-d>
 
-
 "----------------------------------------------------------------------------
 " vim-easymotion
 "-----------------------------------------------------------------------------
@@ -144,4 +92,5 @@ nmap <leader>l <Plug>(easymotion-overwin-line)
 " Emmet
 "-----------------------------------------------------------------------------
 let g:user_emmet_leader_key=','
+
 

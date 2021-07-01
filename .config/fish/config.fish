@@ -4,5 +4,7 @@ end
 
 alias v='nvim'
 alias g git
-
+alias bash='chsh -s /bin/bash'
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
+set -x PATH $PATH $HOME/.config/yarn/global/node_modules/.bin

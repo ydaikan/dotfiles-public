@@ -78,8 +78,8 @@ repo = 'tomasr/molokai'
 # Takuya氏おすすめだが使いこなせていない
 # ----------------------------------------------------------------------------
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
 
 #[[plugins]]
 #repo = 'Shougo/denite.nvim'
@@ -93,5 +93,3 @@ repo = 'ryanoasis/vim-devicons'
 # コメントアウト
 # [[plugins]]
 # repo = 'tyru/caw.vim'
-
-
